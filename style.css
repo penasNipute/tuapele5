@@ -1,0 +1,923 @@
+/*
+Theme Name: Tua Pele 2
+Theme URI: 
+Author: Penas Nipute
+Author URI: 
+Description: Tema para o ecomerce da Tua Pele
+Version: 1.0
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Raleway", serif;
+  a{
+    text-decoration: none;
+    color: #fff
+  }
+  
+}
+
+h1{
+  weight:bold;
+  font-size:44px;
+  letter-spacing:0;
+  line-height:140%;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: #B58159;
+  height: 10vh;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 300;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra para destacar o header */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  display:none;
+
+}
+
+.logo h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.logo h3:hover {
+  color: #A46137; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento no tamanho */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #333; /* Cor de hover para os links */
+}
+
+.content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.content a {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .content a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+/* =================== HERO ======================= */
+section#hero {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  background-image: url('./images/hero_serum.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section#hero .hero_main{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#hero .hero_main .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section#hero .hero_main .content h1 {
+  color: #fff;
+  margin-top: 400px;
+}
+
+section#hero .hero_main .content button {
+  width: 200px;
+  background-color: transparent;
+  border: 4px solid #fff;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+section#hero .button1,
+section#hero .button2 {
+  display:none;
+  width: 5%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+section#hero .button1 {
+  left: 0;
+}
+
+section#hero .button2 {
+  right: 0;
+}
+
+.button_left {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #A46137;
+  cursor: pointer;
+}
+
+.button_right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #A46137;
+  cursor: pointer;
+}
+
+
+/* =================== PRODUCTS ======================= */
+#products {
+  background-color: #ffffff;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+#products .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.products_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.products_header h2 {
+  width: 50%;
+  max-width: 350px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0; /* Removendo margem desnecessária */
+}
+
+.products_header p {
+  width: 50%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: left;
+  margin: 0; /* Removendo margem desnecessária */
+}
+
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ajuste de flexibilidade */
+  gap: 1rem;
+}
+
+.product {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease; /* Efeito de animação */
+}
+
+.product:hover {
+  transform: translateY(-5px); /* Levitação suave no hover */
+  color: #A46137;
+
+}
+
+.product:hover h3{
+  transform: translateY(-5px); /* Levitação suave no hover */
+  color: #A46137;
+
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product img:hover {
+  transform: scale(1.1); /* Aumento suave da imagem */
+}
+
+.product h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.product p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #A46137;
+}
+
+.product button {
+  width: 100%;
+  max-width: 250px;
+  background-color: transparent;
+  color: #A46137;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  border: 1.5px solid #A46137;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #A46137;
+  color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .products_header h2 {
+    font-size: 1.8rem;
+  }
+
+  .products_header p {
+    font-size: 1.4rem;
+  }
+
+  .products_container {
+    grid-template-columns: repeat(3, 1fr); /* Ajuste para telas menores */
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  .product h3 {
+    font-size: 1.3rem;
+  }
+
+  .product p {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+/* =================== ABOUT SKIN ============== */
+section#about_skin {
+  background-color: #A46137;
+  padding-top: 3rem;
+  /* padding-bottom:4rem; */
+}
+
+section#about_skin .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem; /* Adicionando um padding para margens nas laterais */
+}
+
+section#about_skin h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+section#about_skin p {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #fff;
+  width: 70%;
+  text-align: justify;
+  line-height: 2.5rem;
+}
+
+section#about_skin .skin_showcase {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center; /* Alinha as imagens centralizadas */
+}
+
+section#about_skin .skin_showcase img {
+  width: 70%;
+  object-fit: cover;
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 1024px) {
+  section#about_skin .container {
+    padding: 0 2rem;
+  }
+
+  section#about_skin .skin_showcase {
+    flex-direction: column; /* Alinha a imagem abaixo do texto em telas menores */
+    gap: 15px; /* Reduz o espaço entre a imagem e o texto */
+  }
+
+  section#about_skin .skin_showcase img {
+    width: 100%; /* A imagem ocupa toda a largura disponível em telas menores */
+  }
+
+  section#about_skin p {
+    width: 90%; /* Aumenta a largura do texto para se ajustar melhor em telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  section#about_skin h2 {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte em telas pequenas */
+  }
+
+  section#about_skin p {
+    font-size: 1.4rem; /* Reduz o tamanho da fonte do parágrafo em telas pequenas */
+  }
+
+  section#about_skin .skin_showcase {
+    flex-direction: column; /* Em telas pequenas, a imagem e o texto ficam em coluna */
+    gap: 10px;
+  }
+
+  section#about_skin .skin_showcase img {
+    width: 100%; /* A imagem ocupa toda a largura disponível */
+  }
+}
+
+@media (max-width: 480px) {
+  section#about_skin h2 {
+    font-size: 1.3rem; /* Fontes menores para dispositivos móveis */
+  }
+
+  section#about_skin p {
+    font-size: 1.2rem; /* Fontes menores para dispositivos móveis */
+    width: 100%; /* O parágrafo ocupa 100% da largura */
+  }
+
+  section#about_skin .skin_showcase img {
+    width: 100%; /* Imagem ocupa toda a largura disponível em dispositivos móveis */
+  }
+}
+
+/* ================ BLOG ==================== */
+
+
+#blog .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 50px;
+  max-width: 1200px; /* Limita a largura para evitar que o conteúdo fique muito esticado em telas grandes */
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.blog_header {
+  display: flex;
+  flex-direction: column; /* Alinha o título e o texto de forma vertical */
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+
+.blog_header h2 {
+  font-size: 2.5rem; /* Aumenta o tamanho do título */
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.blog_header p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.blog_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Organiza os posts em 2 colunas em telas grandes */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.blog_post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog_post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog_post .image_container {
+  width: 100%;
+  padding-bottom: 20px;
+  border-radius: 8px; /* Bordas arredondadas para as imagens */
+  overflow: hidden;
+}
+
+.blog_post img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ajusta melhor a imagem no container */
+  transition: transform 0.3s ease;
+}
+
+.blog_post h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.blog_post p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  width: 100%;
+  max-width: 220px;
+  background-color: #A46137;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  margin-top: auto; /* Empurra o botão para a parte inferior do post */
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.blog_post:hover .image_container img {
+  transform: scale(1.05); /* Efeito de zoom nas imagens ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .blog_content {
+    grid-template-columns: 1fr; /* Empilha os posts em uma coluna em telas pequenas */
+  }
+
+  .blog_header h2 {
+    font-size: 2rem; /* Ajusta o tamanho do título para telas menores */
+  }
+
+  .blog_header p {
+    font-size: 1.2rem; /* Ajusta o tamanho do texto para telas menores */
+  }
+
+  .blog_post h3 {
+    font-size: 1.6rem; /* Ajusta o tamanho do título do post */
+  }
+
+  .blog_post p {
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+  }
+
+  button {
+    max-width: 100%; /* O botão ocupa toda a largura do post em telas pequenas */
+  }
+}
+
+
+/* =================== FOOTER ======================= */
+.footer1 {
+  background-color: #A46137; /* Cor de fundo */
+  padding: 2rem 0;
+  border-top: 1px solid #e0e0e0; /* Borda superior suave */
+}
+
+.footer1 .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+  gap: 2rem; /* Espaço entre os itens */
+  padding: 0 1rem;
+}
+
+.vp {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre o ícone e o texto */
+  font-size: 1.3rem; /* Aumenta o tamanho da fonte */
+  font-weight: 400; /* Fonte levemente mais forte */
+  color: #fff; /* Cor do texto */
+}
+
+.vp i {
+  font-size: 2rem; /* Aumenta o tamanho do ícone */
+  color: #f9a825; /* Cor dos ícones */
+  transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.vp p {
+  margin: 0; /* Remove margem do parágrafo */
+  font-size: 1.1rem; /* Aumenta o tamanho da fonte do texto */
+}
+
+.vp:hover i {
+  color: #d32f2f; /* Cor dos ícones ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+  .footer1 .container {
+    grid-template-columns: 1fr; /* Em telas pequenas, organiza os itens em uma coluna */
+  }
+
+  .vp {
+    justify-content: center; /* Centraliza os itens */
+    text-align: center;
+  }
+}
+
+
+
+.footer2 {
+  background-color: #FFF; /* Cor de fundo */
+  color: black; /* Cor do texto */
+  padding: 3rem 1rem;
+}
+
+.footer2 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Define três colunas de igual tamanho */
+  gap: 2rem; /* Espaçamento entre as colunas */
+}
+
+.footer_us,
+.footer_products,
+.footer_news {
+  display: flex;
+  flex-direction: column; /* Organiza os itens verticalmente */
+  gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.footer_us h4,
+.footer_products h4,
+.footer_news h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer_us a,
+.footer_products a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer_us a:hover,
+.footer_products a:hover {
+  color: #f9a825; /* Altera a cor do link no hover */
+}
+
+.footer_news p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.footer_news .input {
+  display: flex;
+  gap: 10px;
+}
+
+.footer_news input {
+  padding: 0.5rem;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+.footer_news button {
+  padding: 0.5rem 1rem;
+  background-color: #f9a825;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer_news button:hover {
+  background-color: #c17900;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .footer2 .container {
+    grid-template-columns: 1fr 1fr; /* Exibe 2 colunas em tablets */
+  }
+
+  .footer_news .input {
+    flex-direction: column; /* Organiza os campos em coluna em telas menores */
+  }
+
+  .footer_news input {
+    width: 100%; /* A largura do campo de e-mail ocupa 100% */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer2 .container {
+    grid-template-columns: 1fr; /* Exibe 1 coluna em telas pequenas */
+  }
+
+  .footer_news .input {
+    flex-direction: column; /* Organiza os campos em coluna */
+    gap: 10px;
+  }
+
+  .footer_news input {
+    width: 100%; /* Campo de e-mail ocupa 100% da largura */
+  }
+
+  .footer_news button {
+    width: 100%; /* Botão de inscrição ocupa 100% da largura */
+  }
+}
+
+.footer3 {
+  background-color: #FFF; /* Cor de fundo */
+  color: black; /* Cor do texto */
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0; /* Adiciona uma borda superior para separar do conteúdo anterior */
+
+}
+
+.footer3 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+.location_contact {
+  display: flex;
+  gap: 2rem; /* Espaço entre as seções */
+}
+
+.location,
+.call {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location i,
+.call i {
+  font-size: 1.5rem;
+}
+
+.location p,
+.call p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.social_media {
+  padding-top:1.5rem;
+  display: flex;
+  gap: 1rem; /* Espaço entre os ícones das redes sociais */
+}
+
+.social_media a {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social_media a:hover {
+  color: #f9a825; /* Cor de destaque ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .footer3 .container {
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center;
+  }
+
+  .location_contact {
+    flex-direction: column; /* Organiza os itens da localização e telefone em coluna */
+    align-items: center;
+    gap: 1rem; /* Espaço entre localização e telefone */
+  }
+
+  .social_media {
+    justify-content: center; /* Centraliza os ícones das redes sociais */
+  }
+
+  .social_media a {
+    font-size: 1.2rem; /* Reduz o tamanho dos ícones em telas menores */
+  }
+}
+
+
+.footer4 {
+  background-color: #fff; /* Cor de fundo branco */
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0e0e0; /* Adiciona uma borda superior para separar do conteúdo anterior */
+}
+
+.footer4 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens se adaptem em telas menores */
+}
+
+.allrights {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333; /* Cor de texto escura */
+}
+
+.allrights p {
+  margin: 0; /* Remove margem padrão */
+  padding-bottom: 1rem; /* Adiciona um espaçamento na parte inferior */
+}
+
+#current-year {
+  font-weight: 600;
+}
+
+.terms {
+  display: flex;
+  gap: 1rem; /* Espaço entre os links */
+}
+
+.terms a {
+  font-size: 1rem;
+  color: #333; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  transition: color 0.3s ease;
+}
+
+.terms a:hover {
+  color: #f9a825; /* Cor de destaque ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .footer4 .container {
+    flex-direction: column; /* Organiza os itens em coluna para telas menores */
+    align-items: center;
+  }
+
+  .terms {
+    justify-content: center; /* Centraliza os links de Termos e Política de Privacidade */
+    margin-top: 1rem;
+  }
+}
